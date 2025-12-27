@@ -1,0 +1,116 @@
+**EMAIL SECURITY ANALYSIS & DECISION REPORT**
+
+
+
+1. Document Information
+Item	Details
+Incident ID	IR-EMAIL-2025-12-009
+Email Date	25 December 2025
+Analyst	Avik Jana
+Classification	Internal / SOC Use
+Standards Referenced	ISO/IEC 27001, ISO/IEC 27035, ISO/IEC 27005
+2. Executive Summary
+
+An email received from a Gmail account (ivanovalilia388@gmail.com) was investigated following SOC email triage procedures. Although the sending IP address (209.85.220.41) shows mixed community reputation on VirusTotal due to historical abuse reports, technical analysis confirms the email was legitimately sent through Google’s mail infrastructure, with all authentication controls passing.
+
+Based on ISO-aligned risk assessment, the email is classified as Legitimate / Low Risk, with no indicators of phishing or malware in this specific instance.
+
+3. Email Overview
+Field	Value
+From	Jess ivanovalilia388@gmail.com
+
+To	avikjana212@gmail.com
+
+Subject	Hi Avik
+Message ID	<CAG_cZyRx8pWaNi+PdxHjgeHPv-mDY_SK4W5TDiiECa7_SYNMag@mail.gmail.com>
+Attachments	None
+Embedded Links	None
+4. Authentication & Header Analysis
+Control	Result
+SPF	PASS
+DKIM	PASS
+DMARC	PASS
+ARC	PASS
+
+Sending Infrastructure
+
+Originating IP: 209.85.220.41
+
+ASN: AS15169
+
+Organization: Google LLC
+
+Network: 209.85.128.0/17
+
+RIR: ARIN
+
+Country: United States
+
+📌 Successful SPF, DKIM, and DMARC confirm no spoofing or domain impersonation.
+
+5. Threat Intelligence Correlation
+
+VirusTotal Summary
+
+Detection Ratio: 1 / 95
+
+Community Score: -33
+
+Majority Verdict: Clean
+
+Flagging Context: Historical phishing and spam campaigns abusing Gmail accounts, not malicious infrastructure ownership
+
+Key SOC Interpretation (Important):
+
+Google mail IPs are shared infrastructure
+
+Abuse reports relate to individual compromised Gmail accounts
+
+IP reputation alone is not sufficient for malicious classification
+
+6. Content Analysis
+
+Email Body:
+
+“That is Jessi Anderson Avik.”
+
+No social engineering language
+
+No urgency, financial request, or credential lure
+
+No attachments or URLs
+
+No impersonation attempt detected
+
+7. Risk Assessment (ISO/IEC 27005)
+Risk Category	Assessment
+Phishing Risk	Low
+Malware Risk	None
+Credential Theft	None
+User Impact	Minimal
+
+Overall Risk Rating: 🟢 LOW
+
+8. Decision & SOC Rationale
+
+Final Classification: ✅ Legitimate Email (Low Risk)
+
+Decision Rationale:
+
+Authentication controls fully passed
+
+Infrastructure belongs to trusted provider (Google)
+
+No malicious content or indicators present
+
+Threat intelligence flags are contextual and historical
+
+📌 This case demonstrates proper SOC triage and avoidance of false positives.
+
+9. Recommended Action
+
+No blocking or containment required
+
+Monitor only if sender behavior changes
+
+User awareness: unsolicited ≠ malicious
